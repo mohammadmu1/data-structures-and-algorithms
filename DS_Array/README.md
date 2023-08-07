@@ -3,9 +3,9 @@
 challenge is a simple task where you are required to take an array and reverse the order of its elements. In other words, the element at the beginning of the array becomes the last element, the second element becomes the second-to-last element, and so on.
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](../../assets/arrayCC.png)
+![](../DS_Array/assets/test1.png)
 ### the code
-![](../../assets/fn.png)
+![](../DS_Array/assets/fn.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -24,9 +24,9 @@ challenge is a simple task where you are required to take an array and reverse t
 
 ### run code examples 
 **even element number**
-![Example Image](../../assets/test1.png)
+![Example Image](../DS_Array/assets/test1.png)
 
 **odd element number**
-![](../../assets/test2.png)
+![](../DS_Array/assets/test2.png)
 **single element**
-![](../../assets/test3.png)
+![](../DS_Array/assets/test3.png)
