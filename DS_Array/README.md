@@ -3,7 +3,7 @@
 challenge is a simple task where you are required to take an array and reverse the order of its elements. In other words, the element at the beginning of the array becomes the last element, the second element becomes the second-to-last element, and so on.
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](../DS_Array/assets/test1.png)
+![](../DS_Array/assets//whiteBoard.png)
 ### the code
 ![](../DS_Array/assets/fn.png)
 
