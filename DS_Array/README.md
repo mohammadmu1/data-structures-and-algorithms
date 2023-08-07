@@ -5,7 +5,7 @@ challenge is a simple task where you are required to take an array and reverse t
 <!-- Embedded whiteboard image -->
 ![](../DS_Array/assets//whiteBoard.png)
 ### the code
-![](../DS_Array/assets/fn.png)
+![](../DS_Array/assets/function.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
