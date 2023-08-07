@@ -23,6 +23,10 @@ challenge is a simple task where you are required to take an array and reverse t
 <!-- Show how to run your code, and examples of it in action -->
 
 ### run code examples 
-![](../../assets/test1.png)
+**even element number**
+![Example Image](../../assets/test1.png)
+
+**odd element number**
 ![](../../assets/test2.png)
+**single element**
 ![](../../assets/test3.png)
