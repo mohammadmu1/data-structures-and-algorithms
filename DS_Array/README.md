@@ -12,7 +12,7 @@ challenge is a simple task where you are required to take an array and reverse t
 ### approach
 * i use a for loop that iterates from the beginning of the array (index 0) to the middle of the array (approximately array.length / 2).
 
-* Inside the loop, you perform the swap operation. You swap the element at the current index with the corresponding element from the end of the array. For example, you swap the element at index i with the element at index array.length - i - 1.
+* Inside the loop, you perform the swap operation. i swap the element at the current index with the corresponding element from the end of the array. For example, i swap the element at index i with the element at index array.length - i - 1.
 
 * By the time the loop reaches the middle of the array, all elements have been swapped, resulting in the reversed array.
 
