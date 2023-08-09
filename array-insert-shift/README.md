@@ -4,8 +4,11 @@ challenge is a simple task where you are required to take an array and add eleme
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ![](../array-insert-shift/assets/whiteBoard.png)
+### test cases
+![](../array-insert-shift/assets/testCases.png)
 ### the code
 ![](../array-insert-shift/assets/insertAtMid.png)
+
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -32,9 +35,9 @@ challenge is a simple task where you are required to take an array and add eleme
 
 ### run code examples 
 **even element number**
-![Example Image](../DS_Array/assets/test1.png)
+![](../array-insert-shift/assets/run1.png)
 
 **odd element number**
-![](../DS_Array/assets/test2.png)
+![](../array-insert-shift/assets/run2.png)
 **single element**
-![](../DS_Array/assets/test3.png)
+![](../array-insert-shift/assets/run3.png)
