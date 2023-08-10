@@ -7,8 +7,26 @@ challenge is a simple task where you are required to take an array and add eleme
 ### test cases
 ![](../array-insert-shift/assets/testCases.png)
 ### the code
-![](../array-insert-shift/assets/insertAtMid.png)
+```
+ public static int[] addAtMiddle(int number, int[] arr) {
+        int length = arr.length;
+        int[] ans = new int[length + 1];
+        int middleIndex = length / 2;
 
+        for (int i = 0; i <= length; i++) {
+            if (i == middleIndex) {
+                ans[i] = number;
+            } else if (i < middleIndex) {
+                ans[i] = arr[i];
+            } else {
+                ans[i] = arr[i - 1];
+            }
+        }
+
+        return ans;
+    }
+
+```
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
