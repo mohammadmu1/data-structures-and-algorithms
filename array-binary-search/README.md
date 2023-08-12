@@ -1,6 +1,6 @@
-# Data Structure Insert at Mid of Array
+# Data Structure Binary Search on Array
 <!-- Description of the  -->
-challenge is a simple task where you are required to take an array and add element at the middle of the array and return the new array. 
+challenge is a simple task where you are required to take an array and key and search the key index and return the index using binary search . 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ![](../array-binary-search/assists/whiteBoard%20(2).png)
@@ -59,10 +59,10 @@ challenge is a simple task where you are required to take an array and add eleme
 <!-- Show how to run your code, and examples of it in action -->
 
 ### run code examples 
-**even element number**
-![](../array-insert-shift/assets/run1.png)
+![](../array-binary-search/assists/test1.png)
 
-**odd element number**
-![](../array-insert-shift/assets/run2.png)
-**single element**
-![](../array-insert-shift/assets/run3.png)
+![](../array-binary-search/assists/test2.png)
+
+![](../array-binary-search/assists/test3.png)
+
+![](../array-binary-search/assists/test4.png)
