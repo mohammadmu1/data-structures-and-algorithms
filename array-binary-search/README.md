@@ -3,28 +3,28 @@
 challenge is a simple task where you are required to take an array and add element at the middle of the array and return the new array. 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](../array-insert-shift/assets/whiteBoard.png)
-### test cases
-![](../array-insert-shift/assets/testCases.png)
+![](../array-binary-search/assists/whiteBoard%20(2).png)
+
 ### the code
 ```
- public static int[] addAtMiddle(int number, int[] arr) {
-        int length = arr.length;
-        int[] ans = new int[length + 1];
-        int middleIndex = length / 2;
+ public static int BinarySearch(int[] array, int key) {
+    int left = 0;
+    int right = array.length - 1;  
 
-        for (int i = 0; i <= length; i++) {
-            if (i == middleIndex) {
-                ans[i] = number;
-            } else if (i < middleIndex) {
-                ans[i] = arr[i];
-            } else {
-                ans[i] = arr[i - 1];
-            }
+    while (left <= right) {
+        int mid = left + (right - left) / 2;  //we do this instead of make left or right or mid long if (right +left ) is larger than int size 
+        if (array[mid] == key) {
+            return mid;
         }
-
-        return ans;
+        if (key > array[mid]) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
     }
+
+    return -1;
+}
 
 ```
 
@@ -46,8 +46,8 @@ challenge is a simple task where you are required to take an array and add eleme
 * Return Modified Array: Return the modified ans array, which now contains the new element inserted at the middle while maintaining the reversed order of elements.
 
 ### Big O space/time
- * Time Complexity O(N)
-*  Space Complexity O(N)
+ * Time Complexity O(log(n))
+*  Space Complexity O(1)
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 
