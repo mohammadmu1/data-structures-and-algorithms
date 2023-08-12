@@ -28,22 +28,29 @@ challenge is a simple task where you are required to take an array and add eleme
 
 ```
 
+
+
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 ### approach
-* Create a New Array: Initialize a new array, ans, with a size one element larger than the original array arr to accommodate the additional element.
+1. **Initialization:** Set the initial values of the search boundaries. Typically, `left` is set to the first index (0) of the array, and `right` is set to the last index (`array.length - 1`).
 
-* Calculate Middle Index: Determine the index at which the new element should be inserted. This is typically calculated as half the length of the array, ensuring that the new element is inserted at the middle position.
+2. **Search Loop:** Enter a loop that continues as long as the `left` boundary is less than or equal to the `right` boundary. This ensures there is still a valid search range to consider.
 
-* Loop Through the Array: Iterate through the elements of the new array using a for loop. Begin from index 0 and continue up to the length of the original array.
+3. **Calculate Middle:** Calculate the middle index `mid` of the current search range using the formula `mid = left + (right - left) / 2`. This approach avoids potential overflow issues.
 
-* Insert Element at Middle: When the loop index matches the calculated middle index, insert the new element (number) into the ans array at that index.
+4. **Compare with Key:** Compare the element at index `mid` with the target `key` that you are searching for:
+   - If the element at `array[mid]` is equal to the `key`, the search is successful, and you can return `mid` as the index where the `key` was found.
+   - If the `key` is greater than the element at `array[mid]`, update `left = mid + 1` to restrict the search to the right half of the current range.
+   - If the `key` is less than the element at `array[mid]`, update `right = mid - 1` to restrict the search to the left half of the current range.
 
-* Copy Elements Before Middle: For indices less than the middle index, copy the corresponding element from the original array arr to the ans array.
+5. **Repeat:** Repeat steps 3 and 4, adjusting the search range and recalculating the middle index until the search range is empty (i.e., `left` becomes greater than `right`).
 
-* Copy Elements After Middle: For indices greater than the middle index, copy the element from the original array that corresponds to the previous index (i - 1) to the ans array. This effectively shifts the elements to accommodate the new insertion.
+6. **Key Not Found:** If the loop exits without finding the `key`, return a sentinel value (e.g., -1) to indicate that the `key` was not found in the array.
 
-* Return Modified Array: Return the modified ans array, which now contains the new element inserted at the middle while maintaining the reversed order of elements.
+
+
+
 
 ### Big O space/time
  * Time Complexity O(log(n))
