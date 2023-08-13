@@ -3,7 +3,7 @@
 challenge is a simple task where you are required to take an array and key and search the key index and return the index using binary search . 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](../array-binary-search/assists/null%20(1).png.png)
+![](../array-binary-search/assists/null%20(1).png)
 
 ### the code
 ```
