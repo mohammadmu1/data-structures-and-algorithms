@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import linkedlist.list.LinkedList;
 
-// ... rest of the code ...
 
 public class NodeTest {
 
