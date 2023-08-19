@@ -122,11 +122,37 @@ public class LinkedList {
     }
 
 ``` 
-### run code examples 
-**even element number**
-![Example Image](../DS_Array/assets/test1.png)
 
-**odd element number**
+## run code examples 
+
+### **test on empty and single element and 4 element in list**
+
+```
+public static void main(String[] args) {
+   LinkedList l =new LinkedList();   //empty
+        System.out.println( l.toString()+"\n\n"); 
+        System.out.println(l.isInclude(5)+"\n\n");
+        
+        
+        l.insert(1);    //single element 
+        System.out.println( l.toString()+"\n\n");  
+        System.out.println(l.isInclude(2)+"\n\n");
+        System.out.println(l.isInclude(1));
+
+        l.insert(4);
+        l.insert(3);
+        l.insert(2); // 4 elements 
+        System.out.println( l.toString()+"\n\n");
+        System.out.println(l.isInclude(4)+"\n\n");
+        System.out.println(l.isInclude(5));
+    }
+
+```
+**the output**
+
+![Example Image](../linked-list/assets/output.png)
+
+### **even element number**
 ![](../DS_Array/assets/test2.png)
 **single element**
 ![](../DS_Array/assets/test3.png)
