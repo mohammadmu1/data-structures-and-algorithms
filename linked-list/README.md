@@ -152,7 +152,3 @@ public static void main(String[] args) {
 
 ![Example Image](../linked-list/assets/output.png)
 
-### **even element number**
-![](../DS_Array/assets/test2.png)
-**single element**
-![](../DS_Array/assets/test3.png)
