@@ -5,7 +5,7 @@ the challenge is a task that Ruqier implements a singly linked list and adds 3 m
 <li>add at the first index of the list </li>  
 <li>find if the element exists in the list</li>
 <li>return all list elements in the string </li> 
-</ol>
+</ol> 
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
