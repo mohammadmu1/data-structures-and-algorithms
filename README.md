@@ -8,4 +8,4 @@
 ### Challenge 3
 * **[Binary Search on Array](./array-binary-search/README.md)**
 ### LinkedList
-* **[LinkedList](./linked-list/README.md)**
+* **[LinkedList](./LL2/README.md)**
