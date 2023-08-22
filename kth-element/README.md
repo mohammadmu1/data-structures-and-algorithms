@@ -74,7 +74,11 @@ The method returns the value of the node pointed to by the `ans` pointer, which 
         assertEquals(-12345, linkedList.kthFromEnd(10));
     }
 
+
 ``` 
+### Result of test
+
+![](../linked-list/assets/Screenshot%202023-08-22%20214516.png)
 
 [//]: # ()
 [//]: # ([//]: # &#40;## run code examples &#41;)
