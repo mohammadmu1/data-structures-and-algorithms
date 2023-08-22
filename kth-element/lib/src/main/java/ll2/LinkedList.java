@@ -1,4 +1,4 @@
-package DataStructer;
+package ll2;
 
 public class LinkedList {
     private class Node {
@@ -43,10 +43,14 @@ public class LinkedList {
     }
 
     public void append(int val){
+        if(isEmpty()){
+            insert(val);
+        }else {
         Node newNode=new Node(val);
         tail.next=newNode;
         newNode.next=null;
         tail=newNode;
+    }
     }
     public void insertBefore(int val,int newVal){
         if(!isInclude(val)){
@@ -81,6 +85,19 @@ public class LinkedList {
         newNode.next=temp.next;
         temp.next=newNode;
     }
+    public int kthFromEnd(int k){
+        Node temp = head;
+        Node ans = head;
+        for (int i = 0 ; i<k;i++){
+             if(temp==null) return-12345;
+             temp=temp.next;
+        }
+        while(temp.next !=null){
+            temp=temp.next;
+            ans=ans.next;
+        }
+        return ans.val;
+    }
     @Override
     public String toString() {
         String ans = "";
@@ -102,5 +119,4 @@ public class LinkedList {
 
         return ans;
     }
-
 }
