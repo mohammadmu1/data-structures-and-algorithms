@@ -85,6 +85,19 @@ public class LinkedList {
         newNode.next=temp.next;
         temp.next=newNode;
     }
+    public int kthFromEnd(int k){
+        Node temp = head;
+        Node ans = head;
+        for (int i = 0 ; i<k;i++){
+             if(temp==null) return-12345;
+             temp=temp.next;
+        }
+        while(temp.next !=null){
+            temp=temp.next;
+            ans=ans.next;
+        }
+        return ans.val;
+    }
     @Override
     public String toString() {
         String ans = "";
