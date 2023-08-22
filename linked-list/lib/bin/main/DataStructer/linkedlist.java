@@ -16,7 +16,7 @@ public class LinkedList {
         return (head == null);
     }
 
-    void insert(int val) {
+   public void insert(int val) {
         Node newNode = new Node(val);
         if(!isEmpty()){
             newNode.next=head;
@@ -29,7 +29,7 @@ public class LinkedList {
         head=newNode;
 
     }
-    boolean isInclude(int val) {
+    public boolean isInclude(int val) {
         Node temp=head;
         while (temp != null) {
 
@@ -42,11 +42,14 @@ public class LinkedList {
     }
 
     public void append(int val){
+        if (isEmpty()){
+            insert(val);
+        }else {
         Node newNode=new Node(val);
         tail.next=newNode;
         newNode.next=null;
         tail=newNode;
-    }
+    }}
     public void insertBefore(int val,int newVal){
         if(!isInclude(val)){
             return ;
