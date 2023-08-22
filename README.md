@@ -9,3 +9,6 @@
 * **[Binary Search on Array](./array-binary-search/README.md)**
 ### LinkedList
 * **[LinkedList](./LL2/README.md)**
+
+### LinkedList kth
+* **[kth Element method](./kth-element/README.md)**
