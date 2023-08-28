@@ -64,4 +64,22 @@ public class LinkedListTest {
         assertTrue(list.isInclude(10));
         assertFalse(list.isInclude(20));
     }
+
+    @Test
+    void testZipLists() {
+        LinkedList list1 = new LinkedList();
+        list1.insert(1);
+        list1.append(3);
+
+        LinkedList list2 = new LinkedList();
+        list2.insert(2);
+        list2.append(4);
+
+        LinkedList resultList = new LinkedList();
+        resultList.setHead(resultList.zipLists(list1, list2));
+
+        // Verify the merged list by asserting expected values
+        StringBuilder expected = new StringBuilder("1 -> 2 -> 3 -> 4 -> NULL");
+        assertEquals(expected.toString(), resultList.toString());
+    }
 }

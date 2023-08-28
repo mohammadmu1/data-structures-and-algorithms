@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4404c084-e5df-4bcb-94f6-8bfff36390af" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../kth-element/lib/src/main/java/ll2/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kth-element/lib/src/main/java/ll2/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kth-element/lib/src/test/java/ll2/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kth-element/lib/src/test/java/ll2/LinkedListTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2UaqWOo10GeRta4SXQEcuUpSwEG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4404c084-e5df-4bcb-94f6-8bfff36390af" name="Changes" comment="" />
+      <created>1693188071445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693188071445</updated>
+    </task>
+    <servers />
+  </component>
+</project>

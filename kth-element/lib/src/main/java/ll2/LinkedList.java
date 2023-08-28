@@ -10,6 +10,10 @@ public class LinkedList {
         }
     }
 
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
     private Node head = null;
     private Node tail = null;
 
@@ -98,6 +102,33 @@ public class LinkedList {
         }
         return ans.val;
     }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public Node zipLists(LinkedList list1, LinkedList list2) {
+        Node dummy = new Node(0);
+        Node temp = dummy;
+        Node ptr1 = list1.getHead();
+        Node ptr2 = list2.getHead();
+
+        while (ptr1 != null || ptr2 != null) {
+            if (ptr1 != null) {
+                temp.next = new Node(ptr1.val);
+                temp = temp.next;
+                ptr1 = ptr1.next;
+            }
+            if (ptr2 != null) {
+                temp.next = new Node(ptr2.val);
+                temp = temp.next;
+                ptr2 = ptr2.next;
+            }
+        }
+
+        return dummy.next;
+    }
+
     @Override
     public String toString() {
         String ans = "";
