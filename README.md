@@ -12,3 +12,6 @@
 
 ### LinkedList kth
 * **[kth Element method](./kth-element/README.md)**
+
+### LinkedList zip method
+* **[zip method](./zip/README.md)**
