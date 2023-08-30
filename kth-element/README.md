@@ -4,7 +4,7 @@ the challenge is  find the value of the kth element from the end of a singly lin
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](../LL2/LL2.png)
+![](../kth-element/LL2%20(1).png)
 ### the code
 
 ```
