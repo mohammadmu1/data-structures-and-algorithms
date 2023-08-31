@@ -8,4 +8,10 @@
 ### Challenge 3
 * **[Binary Search on Array](./array-binary-search/README.md)**
 ### LinkedList
-* **[LinkedList](./linked-list/README.md)**
+* **[LinkedList](./LL2/README.md)**
+
+### LinkedList kth
+* **[kth Element method](./kth-element/README.md)**
+
+### LinkedList zip method
+* **[zip method](./zip/README.md)**
