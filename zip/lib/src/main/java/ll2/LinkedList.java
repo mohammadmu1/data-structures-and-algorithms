@@ -109,6 +109,7 @@ public class LinkedList {
 
     public Node zipLists(LinkedList list1, LinkedList list2) {
         Node dummy = new Node(0);
+        dummy.next=null;
         Node temp = dummy;
         Node ptr1 = list1.getHead();
         Node ptr2 = list2.getHead();
