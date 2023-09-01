@@ -9,6 +9,15 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+      Queue q=new Queue();
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        System.out.println(q.peek());
+        q.dequeue();
+        System.out.println(q.peek());
+        q.dequeue();
+        System.out.println(q.peek());
+
     }
 }
