@@ -20,4 +20,4 @@
 ### Stack & Queue
 * **[Stack](./stack/README.md)**
 
-* **[Queue](./queue/README.md)**
+* **[Queue ](./queue/README.md)**
