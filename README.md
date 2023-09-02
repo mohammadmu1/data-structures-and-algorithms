@@ -15,3 +15,9 @@
 
 ### LinkedList zip method
 * **[zip method](./zip/README.md)**
+
+
+### Stack & Queue
+* **[Stack](./stack/README.md)**
+
+* **[Queue](./queue/README.md)**
