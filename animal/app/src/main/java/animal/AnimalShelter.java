@@ -31,7 +31,7 @@ public class AnimalShelter {
                 throw new NoSuchElementException("No cats in the shelter");
             }
         } else {
-            throw new IllegalArgumentException("Invalid preference");
+            return null;
         }
     }
 }
