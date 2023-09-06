@@ -4,11 +4,17 @@
 package animal;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Animal a1 = new Animal("cat","max");
+        Animal a2 = new Animal("dog","max1");
+        AnimalShelter q1=new AnimalShelter();
+        q1.enqueue(a1);
+        q1.enqueue(a2);
+
+        System.out.println(q1.dequeue("cat").getName());
+        System.out.println(q1.dequeue("dog").getName());
+        System.out.println(55);
+
     }
 }
