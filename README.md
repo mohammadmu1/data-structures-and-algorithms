@@ -21,3 +21,7 @@
 * **[Stack](./stack/README.md)**
 
 * **[Queue ](./queue/README.md)**
+
+### Challenge 12
+
+* **[CC12 ](./animal/README.md)**
