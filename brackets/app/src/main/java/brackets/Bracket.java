@@ -34,12 +34,12 @@ public class Bracket {
                 if (!stack.isEmpty() && isSimilarBracket(stack.peek(), temp)) {
                     stack.pop();
                 } else {
-                    return false; // Mismatched brackets
+                    return false; 
                 }
             }
         }
 
-        return stack.isEmpty(); // Check if all brackets were closed
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
