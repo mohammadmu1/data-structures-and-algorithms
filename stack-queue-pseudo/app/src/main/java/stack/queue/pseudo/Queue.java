@@ -1,17 +1,26 @@
 package stack.queue.pseudo;
-import java.util.Stack;
+
 public class Queue<T> implements PseudoQueue<T>{
+    //stack ref
     private Stack<T> stack1;
     private Stack<T> stack2;
 
     public Queue() {
+        //create stack
         stack1 = new Stack<>();
         stack2 = new Stack<>();
     }
 
 
     public void enqueue(T val) {
+
+            while (!stack2.isEmpty()) {
+                stack1.push(stack2.pop());
+            }
+
+
         stack1.push(val);
+
     }
 
 
@@ -30,9 +39,7 @@ public class Queue<T> implements PseudoQueue<T>{
         T ans = stack2.pop();
 
 
-        while (!stack2.isEmpty()) {
-            stack1.push(stack2.pop());
-        }
+
 
         return ans;
     }
@@ -61,10 +68,8 @@ public class Queue<T> implements PseudoQueue<T>{
     }
 
     public boolean isEmpty() {
-        return stack1.isEmpty();
+        return stack1.isEmpty() && stack2.isEmpty();
     }
 
-    public int size() {
-        return stack1.size();
-    }
+
 }
