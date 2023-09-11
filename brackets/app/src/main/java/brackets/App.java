@@ -7,6 +7,6 @@ public class App {
 
 
     public static void main(String[] args) {
-        System.out.println(bracket.validateBrackets("(]("));
+        System.out.println(Bracket.validateBrackets("]"));
     }
 }
