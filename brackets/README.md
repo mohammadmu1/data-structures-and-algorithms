@@ -1,11 +1,8 @@
 # validate brackets method
 <!-- Description of the  -->
-the challenge is a task that Ruqier implements a singly linked list and adds 3 methods 
-<ol>
-<li>add at the first index of the list </li>  
-<li>find if the element exists in the list</li>
-<li>return all list elements in the string </li> 
-</ol>
+
+challenge is create method  called "validateBrackets" that takes a single input parameter, a string. The function should return a boolean value indicating whether the brackets in the input string are balanced. The types of brackets to consider are round brackets (()), square brackets ([]), and curly brackets ({}). A set of brackets is considered balanced if every opening bracket has a corresponding closing bracket in the correct order.
+
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
