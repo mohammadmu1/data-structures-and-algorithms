@@ -14,5 +14,7 @@ public class App {
 
         System.out.println(q.dequeue());
         System.out.println(q.peek());
+
+        
     }
 }
