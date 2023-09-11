@@ -42,10 +42,6 @@ public class Bracket {
         return stack.isEmpty();
     }
 
-    public static void main(String[] args) {
-        String expression = "{[()]()}";
-        boolean isValid = validateBrackets(expression);
-        System.out.println("Is the expression balanced? " + isValid); // Should print true
-    }
+  
 }
 
