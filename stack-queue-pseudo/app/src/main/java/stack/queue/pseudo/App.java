@@ -3,18 +3,26 @@
  */
 package stack.queue.pseudo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
 
     public static void main(String[] args) {
-        Queue<Integer> q = new Queue<>();;
-
-        q.enqueue(5);
-        q.enqueue(4);
-
-        System.out.println(q.dequeue());
-        System.out.println(q.peek());
-
-        
+        BinaryTree tree = new BinaryTree();
+        tree.root = new TreeNode(1);
+        tree.root.left = new TreeNode(2);
+        tree.root.right = new TreeNode(3);
+//        tree.root.right.left = new TreeNode(4);
+//        tree.root.right.right = new TreeNode(5);
+        List<Integer> tr=new ArrayList<>();
+        tree.postOrder(tree.root , tr);
+        System.out.print("Pre-order traversal: ");
+        for (int val : tr) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
     }
+
 }
