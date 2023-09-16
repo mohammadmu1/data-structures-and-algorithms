@@ -7,11 +7,14 @@ public class BinaryTree {
 
 
 
-        TreeNode root=null;
+       protected TreeNode root;
+    BinaryTree(){
+          root = null;
+    }
         //    BinaryTree(ArrayList<Integer> tree){
 //
 //    }
-        void preOrder(TreeNode root , List<Integer> ans){
+        private  void preOrder(TreeNode root , List<Integer> ans){
 
             if(root==null){
 
@@ -24,22 +27,28 @@ public class BinaryTree {
             }
 
         }
-        void inOrder(TreeNode root , List<Integer> ans){
+    public void preOrder( List<Integer> ans){
+        preOrder(root,ans);
+    }
+    private  void inOrder(TreeNode root , List<Integer> ans){
 
             if(root==null){
 
                 return;
             }
             else{
-                preOrder(root.left , ans);
+                inOrder(root.left , ans);
 
                 ans.add(root.value );
 
-                preOrder(root.right ,ans);
+                inOrder(root.right ,ans);
             }
 
         }
-        void postOrder(TreeNode root , List<Integer> ans){
+    public void inOrder( List<Integer> ans){
+           inOrder(root,ans);
+       }
+        private void postOrder(TreeNode root , List<Integer> ans){
 
             if(root==null){
 
@@ -53,6 +62,9 @@ public class BinaryTree {
             }
 
         }
+    public void postOrder( List<Integer> ans){
+        postOrder(root,ans);
+    }
 
 
 }
