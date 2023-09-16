@@ -1,6 +1,8 @@
 package stack.queue.pseudo;
 
 public class Stack<T> {
+
+
     private class Node {
         T val;
         Node next;
