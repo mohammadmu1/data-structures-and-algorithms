@@ -1,11 +1,13 @@
 package binary.tree;
 
 public class TreeNode {
-    TreeNode left;
-    TreeNode right;
-    int value;
+    protected  TreeNode left;
+    protected  TreeNode right;
+   protected int value;
 
-    TreeNode(int value) {
+    protected TreeNode(int value) {
         this.value = value;
+        this.left = null;
+        this.right = null;
     }
 }
