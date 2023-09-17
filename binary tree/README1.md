@@ -47,24 +47,21 @@ public void add(int val) {
 ### approach
 **Preorder Traversal:**
 
-1. Start at the root of the binary tree.
-2. Visit (process) the current node.
-3. Recursively perform a Preorder traversal on the left subtree.
-4. Recursively perform a Preorder traversal on the right subtree.
+Check if the tree is empty.
 
-**Inorder Traversal:**
+If it's empty, create a new tree node with the given value and make it the root.
 
-1. Start at the root of the binary tree.
-2. Recursively perform an Inorder traversal on the left subtree.
-3. Visit (process) the current node.
-4. Recursively perform an Inorder traversal on the right subtree.
+If the tree isn't empty, start at the root.
 
-**Postorder Traversal:**
+Keep going down the tree:
 
-1. Start at the root of the binary tree.
-2. Recursively perform a Postorder traversal on the left subtree.
-3. Recursively perform a Postorder traversal on the right subtree.
-4. Visit (process) the current node.
+If the value you want to add is equal to the current node's value, stop (no duplicates allowed).
+If the value is smaller, go left.
+If the value is bigger, go right.
+When you reach a spot where you can't go further (a null spot), add the new value there:
+
+If the new value is smaller than where you stopped, put it on the left.
+If the new value is bigger, put it on the right.
 
 
 ### Big O space/time
