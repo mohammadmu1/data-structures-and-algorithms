@@ -13,10 +13,10 @@ public class App {
 
         BinarySearchTree tree = new BinarySearchTree();
 
-       tree.add(5);
-        tree.add(4);
-        tree.add(6);
-        tree.add(5);
+       tree.addR(5);
+        tree.addR(4);
+        tree.addR(6);
+        tree.addR(5);
 
 
         System.out.println(tree.Contains(4));
