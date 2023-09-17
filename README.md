@@ -37,3 +37,5 @@
 ### binary tree
 
 * **[binary tree ](./binary%20tree/README.md)**
+
+* **[BST](./binary%20tree/README1.md)**

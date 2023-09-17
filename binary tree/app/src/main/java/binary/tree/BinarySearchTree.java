@@ -1,7 +1,7 @@
 package binary.tree;
 
 public class BinarySearchTree extends BinaryTree {
-    public boolean Contains(int val){
+    public boolean contains(int val){
         TreeNode t=root;
         while(t!=null){
             if(t.value==val){
@@ -38,4 +38,26 @@ public class BinarySearchTree extends BinaryTree {
 
        }
        else parent.left=new TreeNode(val);
-}}
+}
+
+    private TreeNode addR(TreeNode root , int val){
+
+
+        if(root==null){
+            root=new TreeNode(val);
+            return root;
+        }
+        if(val<root.value){
+             root.left=addR(root.left,val);
+        }
+        else if(val>root.value){
+            root.right=addR(root.right,val);
+        }
+        return root;
+    }
+    public void addR( int val){
+       root= addR(root,val);
+    }
+
+
+}

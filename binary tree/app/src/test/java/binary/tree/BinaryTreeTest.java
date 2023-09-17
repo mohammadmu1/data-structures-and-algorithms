@@ -1,3 +1,13 @@
+package binary.tree;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class BinaryTreeTest {
 
     private BinaryTree binaryTree;
@@ -52,4 +62,4 @@ public class BinaryTreeTest {
         binaryTree.postOrder(result);
 
         assertEquals(expected, result);
-    }
+    }}
