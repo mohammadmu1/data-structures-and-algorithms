@@ -19,7 +19,7 @@ public class App {
         tree.addR(5);
 
 
-        System.out.println(tree.Contains(4));
+        System.out.println(tree.contains(4));
 
 
 

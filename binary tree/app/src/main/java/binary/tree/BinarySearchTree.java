@@ -1,7 +1,7 @@
 package binary.tree;
 
 public class BinarySearchTree extends BinaryTree {
-    public boolean Contains(int val){
+    public boolean contains(int val){
         TreeNode t=root;
         while(t!=null){
             if(t.value==val){
