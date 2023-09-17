@@ -6,7 +6,7 @@ implemt binary tree with 3 dfs method
 3- post order
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](../linked-list/assets/null%20(6).png)
+![](../binary%20tree/Whiteboard%206.png)
 ### the code
 
 ```
