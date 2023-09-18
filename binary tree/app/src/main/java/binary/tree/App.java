@@ -17,9 +17,10 @@ public class App {
         tree.addR(4);
         tree.addR(6);
         tree.addR(5);
+        tree.add(500);
 
 
-        System.out.println(tree.contains(4));
+        System.out.println(tree.maxValue());
 
 
 
