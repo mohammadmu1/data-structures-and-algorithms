@@ -1,5 +1,6 @@
 package binary.tree;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTree {
@@ -64,6 +65,16 @@ public class BinaryTree {
         }
     public void postOrder( List<Integer> ans){
         postOrder(root,ans);
+    }
+    int maxValue(){
+        List<Integer> l = new ArrayList<>();
+        postOrder(l);
+        int length=l.size();
+        int maxV=l.get(0);
+        for(int i = 1 ;  i<length;i++ ){
+            if(l.get(i)>maxV)maxV=l.get(i);
+        }
+        return maxV;
     }
 
 

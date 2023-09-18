@@ -56,7 +56,7 @@ public class BinarySearchTree extends BinaryTree {
         return root;
     }
     public void addR( int val){
-       root= addR(root,val);
+     root=  addR(root,val);
     }
 
 
