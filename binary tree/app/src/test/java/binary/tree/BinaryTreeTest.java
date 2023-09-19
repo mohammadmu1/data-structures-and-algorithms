@@ -62,4 +62,28 @@ public class BinaryTreeTest {
         binaryTree.postOrder(result);
 
         assertEquals(expected, result);
-    }}
+    }
+    private BinaryTree binaryTree;
+
+    @Before
+    public void setUp() {
+        // Initialize your binary tree with test data
+        binaryTree = new BinaryTree();
+
+
+
+        binaryTree.root = new TreeNode(10);
+        binaryTree.root.left = new TreeNode(5);
+        binaryTree.root.right = new TreeNode(15);
+        binaryTree.root.left.left = new TreeNode(3);
+        binaryTree.root.left.right = new TreeNode(8);
+    }
+
+    @Test
+    public void testMaxValueWithSampleTree() {
+        // Test the maxValue method with the sample tree
+        int max = binaryTree.maxValue();
+        assertEquals(15, max); // The maximum value in the sample tree is 15
+    }
+
+}
