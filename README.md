@@ -39,3 +39,5 @@
 * **[binary tree ](./binary%20tree/README.md)**
 
 * **[BST](./binary%20tree/README1.md)**
+
+* **[Max Value](./binary%20tree/README2.md)**

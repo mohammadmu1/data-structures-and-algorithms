@@ -7,7 +7,9 @@ method find max value in binary tree
 ![](../binary%20tree/Whiteboard%207.png)
 ### the code
 
-``` int maxValue(){
+``` 
+
+int maxValue(){
         List<Integer> l = new ArrayList<>();
         postOrder(l);
         int length=l.size();
@@ -46,37 +48,24 @@ method find max value in binary tree
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 ### test code 
-```import static org.junit.Assert.*;
-import org.junit.Test;
+```@Before
+    public void setUp() {
+        // Initialize your binary tree with test data
+        binaryTree = new BinaryTree();
 
-public class TreeNodeTest {
+        
+
+        binaryTree.root = new TreeNode(10);
+        binaryTree.root.left = new TreeNode(5);
+        binaryTree.root.right = new TreeNode(15);
+        binaryTree.root.left.left = new TreeNode(3);
+        binaryTree.root.left.right = new TreeNode(8);
+    }
 
     @Test
-    public void testAdd() {
-        TreeNode root = null;
-        TreeNodeManager manager = new TreeNodeManager();
-
-        // Add values to the tree
-        manager.add(root, 5);
-        manager.add(root, 3);
-        manager.add(root, 7);
-        manager.add(root, 2);
-        manager.add(root, 4);
-        manager.add(root, 6);
-        manager.add(root, 8);
-
-        // Check if the values are present in the tree
-        assertTrue(manager.contains(root, 5));
-        assertTrue(manager.contains(root, 3));
-        assertTrue(manager.contains(root, 7));
-        assertTrue(manager.contains(root, 2));
-        assertTrue(manager.contains(root, 4));
-        assertTrue(manager.contains(root, 6));
-        assertTrue(manager.contains(root, 8));
-        
-        // Check if a value that was not added is not in the tree
-        assertFalse(manager.contains(root, 9));
+    public void testMaxValueWithSampleTree() {
+        // Test the maxValue method with the sample tree
+        int max = binaryTree.maxValue();
+        assertEquals(15, max); // The maximum value in the sample tree is 15
     }
-}
-
 ``` 
