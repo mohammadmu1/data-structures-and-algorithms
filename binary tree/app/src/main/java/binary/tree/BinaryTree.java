@@ -1,7 +1,9 @@
 package binary.tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BinaryTree {
 
@@ -77,5 +79,24 @@ public class BinaryTree {
         return maxV;
     }
 
+      static   List<Integer> bfs(BinaryTree t){
+        List<Integer>ans = new ArrayList<>();
+            Queue<TreeNode> q = new LinkedList<>();
+            q.add(t.root);
+            while(q.size() != 0){
+                int length = q.size();
+                for(int i = 0 ;i<length;i++){
 
+                    if(q.peek().left!=null){
+                        q.add(q.peek().left);
+
+                    }
+                    if(q.peek().right!=null){
+                        q.add(q.peek().right);
+                    }
+                    ans.add(q.remove().value);
+                }
+            }
+            return ans;
+        }
 }

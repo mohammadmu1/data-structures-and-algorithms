@@ -13,14 +13,17 @@ public class App {
 
         BinarySearchTree tree = new BinarySearchTree();
 
-       tree.addR(5);
+       tree.addR(10);
         tree.addR(4);
         tree.addR(6);
-        tree.addR(5);
-        tree.add(500);
+        tree.addR(3);
+        tree.addR(15);
+        tree.addR(16);
+        tree.addR(11);
 
 
-        System.out.println(tree.maxValue());
+
+        System.out.println(BinarySearchTree.bfs(tree));
 
 
 
