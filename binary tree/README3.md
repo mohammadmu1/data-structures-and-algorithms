@@ -67,37 +67,35 @@ O/P : Array (Integer)
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 ### test code 
-```import static org.junit.Assert.*;
-import org.junit.Test;
 
-public class TreeNodeTest {
+```
+ @Test
+    public void testBreadthFirstTraversal() {
+        // Create a binary tree for testing
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        root.right.right = new TreeNode(7);
 
-    @Test
-    public void testAdd() {
-        TreeNode root = null;
-        TreeNodeManager manager = new TreeNodeManager();
+        // Perform breadth-first traversal
+        BinaryTreeTraversal traversal = new BinaryTreeTraversal();
+        List<Integer> result = traversal.breadthFirstTraversal(root);
 
-        // Add values to the tree
-        manager.add(root, 5);
-        manager.add(root, 3);
-        manager.add(root, 7);
-        manager.add(root, 2);
-        manager.add(root, 4);
-        manager.add(root, 6);
-        manager.add(root, 8);
+        // Define the expected result
+        List<Integer> expected = new ArrayList<>();
+        expected.add(1);
+        expected.add(2);
+        expected.add(3);
+        expected.add(4);
+        expected.add(5);
+        expected.add(6);
+        expected.add(7);
 
-        // Check if the values are present in the tree
-        assertTrue(manager.contains(root, 5));
-        assertTrue(manager.contains(root, 3));
-        assertTrue(manager.contains(root, 7));
-        assertTrue(manager.contains(root, 2));
-        assertTrue(manager.contains(root, 4));
-        assertTrue(manager.contains(root, 6));
-        assertTrue(manager.contains(root, 8));
-        
-        // Check if a value that was not added is not in the tree
-        assertFalse(manager.contains(root, 9));
+        // Assert that the result matches the expected result
+        assertEquals(expected, result);
     }
-}
 
 ``` 
