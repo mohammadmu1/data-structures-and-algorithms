@@ -3,9 +3,8 @@
  */
 package binary.tree;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
+import binary.tree.KaryTreeNode;
 class AppTest {
+
 
 }
