@@ -9,7 +9,7 @@ O/P : array of integer
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](/app/src/main/java/insertion/cc26/Whiteboard%2012.png)
+![](../insertion/Whiteboard%2012.png)
 ### the code
 
 ```
