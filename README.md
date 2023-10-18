@@ -34,6 +34,10 @@
 
 * **[CC13 ](./brackets/README.md)**
 
+* **[CC26 ](./sorting/insertion/README.md)**
+
+* **[CC27 ](./sorting/merge/README.md)**
+
 ### binary tree
 
 * **[binary tree ](./binary%20tree/README.md)**
