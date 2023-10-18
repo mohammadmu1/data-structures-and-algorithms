@@ -1,9 +1,9 @@
 package insertion.cc26;
 
-public class sort {
+public class Sort {
 
-    int [] insertionSort(int [] arr){
-
+    public int [] insertionSort(int[] arr){
+        if(arr.length <2) return arr;
         int length = arr.length , j,key;
         if(length <1) return arr;
         for(int i = 1 ; i<length;i++){
