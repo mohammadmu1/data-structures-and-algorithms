@@ -3,12 +3,38 @@
  */
 package comparisons;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        List<Movie> movies = List.of(
+                new Movie("The Shawshank Redemption", 1994, List.of("Drama")),
+                new Movie("A Beautiful Mind", 2001, List.of("Drama", "Biography")),
+                new Movie("Avatar", 2009, List.of("Action", "Adventure", "Fantasy")),
+                new Movie("Inception", 2010, List.of("Action", "Adventure", "Sci-Fi")),
+                new Movie("Pulp Fiction", 1994, List.of("Crime", "Drama")),
+                new Movie("Anchorman", 2004, List.of("Comedy"))
+        );
+
+
+
+        List<Movie> moviesSortedByYear= sortMoviesByYear(movies);
+
+        moviesSortedByYear.stream().forEach(movie -> {
+            System.out.println(movie.year);});
+
+
+
     }
+    public static List<Movie> sortMoviesByYear(List<Movie> movies) {
+        return movies.stream()
+                .sorted((a, b) -> Integer.compare(a.getYear(), b.getYear()))
+                .collect(Collectors.toList());
+    }
+
 }
