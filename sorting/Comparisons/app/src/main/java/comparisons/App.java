@@ -22,7 +22,8 @@ public class App {
         );
 
 
-
+        movies.stream().forEach(movie -> {
+            System.out.print(movie.year);});
         List<Movie> moviesSortedByYear= sortMoviesByYear(movies);
 
         moviesSortedByYear.stream().forEach(movie -> {
@@ -37,4 +38,16 @@ public class App {
                 .collect(Collectors.toList());
     }
 
+    public static List<Movie> sortMoviesByTitleIgnoringPrefix(List<Movie> movies) {
+        return movies.stream()
+                .sorted((a, b) -> {
+
+                    String titleA = a.getTitle().replaceAll("^(A|An|The) ", "");
+                    String titleB = b.getTitle().replaceAll("^(A|An|The) ", "");
+                    return titleA.compareTo(titleB);
+                })
+                .collect(Collectors.toList());
+    }
 }
+
+
