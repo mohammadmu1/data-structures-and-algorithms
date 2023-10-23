@@ -34,7 +34,7 @@ public class App {
         System.out.println("\nMovies title before sort");
         movies.stream().forEach(movie -> {
             System.out.print(movie.title);});
-        System.out.println("\nMovies title before sort");
+        System.out.println("\nMovies title after sort");
 
         sortMoviesByTitleIgnoringPrefix(movies).stream().forEach(movie -> {
             System.out.print(movie.title+ " ");});
