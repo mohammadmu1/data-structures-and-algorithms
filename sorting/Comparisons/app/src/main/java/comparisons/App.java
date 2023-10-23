@@ -3,28 +3,12 @@
  */
 package comparisons;
 
-import java.util.Collections;
-import java.util.List;
-
 public class App {
-
-    public static void sortByYear(List<Movie> movies) {
-        // Sort the movies by year in descending order (most recent first)
-        Collections.sort(movies, (a, b) -> b.year - a.year);
+    public String getGreeting() {
+        return "Hello World!";
     }
+
     public static void main(String[] args) {
-
-        List<Movie> movies = List.of(
-                new Movie("The Shawshank Redemption", 1994, List.of("Drama")),
-                new Movie("A Beautiful Mind", 2001, List.of("Drama", "Biography")),
-                new Movie("Avatar", 2009, List.of("Action", "Adventure", "Fantasy")),
-                new Movie("Inception", 2010, List.of("Action", "Adventure", "Sci-Fi")),
-                new Movie("Pulp Fiction", 1994, List.of("Crime", "Drama")),
-                new Movie("Anchorman", 2004, List.of("Comedy"))
-        );
-
-        sortByYear(movies);
-        System.out.println("Sorted by Year (Most Recent First):");
-        movies.forEach(movie -> System.out.println(movie.title + " (" + movie.year + ")"));
+        System.out.println(new App().getGreeting());
     }
 }
