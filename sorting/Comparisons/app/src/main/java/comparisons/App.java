@@ -21,13 +21,23 @@ public class App {
                 new Movie("Anchorman", 2004, List.of("Comedy"))
         );
 
-
+        System.out.println("Movies year before sort");
         movies.stream().forEach(movie -> {
-            System.out.print(movie.year);});
+            System.out.print(movie.year+" ");});
         List<Movie> moviesSortedByYear= sortMoviesByYear(movies);
 
-        moviesSortedByYear.stream().forEach(movie -> {
-            System.out.println(movie.year);});
+        System.out.println("\nMovies year After sort");
+        sortMoviesByYear(movies).stream().forEach(movie -> {
+            System.out.print(movie.year+" ");});
+
+
+        System.out.println("\nMovies title before sort");
+        movies.stream().forEach(movie -> {
+            System.out.print(movie.title);});
+        System.out.println("\nMovies title before sort");
+
+        sortMoviesByTitleIgnoringPrefix(movies).stream().forEach(movie -> {
+            System.out.print(movie.title+ " ");});
 
 
 
