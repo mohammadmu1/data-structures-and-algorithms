@@ -8,5 +8,24 @@ public class App {
 
     public static void main(String[] args) {
 
+            HashTable hashMap = new HashTable();
+
+
+            hashMap.set("Mohamad", "1");
+            hashMap.set("Alice", "3");
+            hashMap.set("Mohammad Al Najjar", "4");
+
+
+            String mohamadValue = hashMap.get("Mohamad");
+            String bobValue = hashMap.get("Bob");
+            String najjarValue = hashMap.get("Mohammad Al Najjar");
+
+            System.out.println("Value for Mohamad: " + mohamadValue); // Output: 1
+            System.out.println("Value for Bob: " + bobValue);         // Output: null
+            System.out.println("Value for Mohammad Al Najjar: " + najjarValue); // Output: 4
+
+
+            boolean aliceExists = hashMap.has("Alice");
+            boolean johnExists = hashMap.has("John");
     }
 }

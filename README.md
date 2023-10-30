@@ -40,6 +40,8 @@
 
 * **[CC28 ](./sorting/Comparisons/app/src/main/java/comparisons/App.java)**
 
+* **[CC30 ](./hashtable/README.md)**
+
 * **[CC31 ](./repeated-word/README.md)**
 
 ### binary tree
