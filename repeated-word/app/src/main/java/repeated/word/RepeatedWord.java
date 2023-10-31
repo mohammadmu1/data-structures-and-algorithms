@@ -6,7 +6,7 @@ public class RepeatedWord {
 
     static String repeatedWord(String input){
 
-        String[] stringArray = input.toLowerCase().split("[,\\s]+");
+        String[] stringArray = input.toLowerCase().split("[^a-zA-Z0-9]+");
         HashSet<String> set=new HashSet<>();
         int length = stringArray.length;
         for(int i = 0 ; i<length;i++){

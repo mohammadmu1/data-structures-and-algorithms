@@ -18,7 +18,7 @@ public class RepeatedWordTest {
 
     @Test
     public void testRepeatedWordAtBeginning() {
-        String input = "word word word repeated.";
+        String input = "word word. word. repeated.";
         String result = RepeatedWord.repeatedWord(input);
 
         assertEquals("word", result);
