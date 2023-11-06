@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class HashTableTest {
-    private HashTable hashTable;
+    private HashTable<String,String> hashTable;
 
     @BeforeEach
     public void setUp() {
