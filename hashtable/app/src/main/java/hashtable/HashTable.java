@@ -1,96 +1,143 @@
 package hashtable;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
-public class HashTable {
-    private static final int TABLE_SIZE = 1000;
-    private LinkedList<Entry>[] table;
+import java.util.Objects;
 
-    public HashTable() {
-        table = new LinkedList[TABLE_SIZE];
-    }
+public class HashTable<K, V> {
 
-    public void set(String key, String value) {
-        int index = hash(key);
-        if (table[index] == null) {
-            table[index] = new LinkedList<>();
+
+        ArrayList<HashNode<K, V> > bucketArray;
+
+
+        private int numBuckets;
+
+
+        private int size;
+
+
+        public HashTable()
+        {
+            bucketArray = new ArrayList<>();
+            numBuckets = 10;
+            size = 0;
+
+            // Create empty chains
+            for (int i = 0; i < numBuckets; i++)
+                bucketArray.add(null);
         }
 
-        for (Entry entry : table[index]) {
-            if (entry.getKey().equals(key)) {
-                entry.setValue(value);
-                return;
+        public int size() { return size; }
+        public boolean isEmpty() { return size() == 0; }
+
+        private final int hashCode (K key) {
+            return Objects.hashCode(key);
+        }
+
+
+        private int getBucketIndex(K key)
+        {
+            int hashCode = hashCode(key);
+            int index = hashCode % numBuckets;
+            // key.hashCode() could be negative.
+            index = index < 0 ? index * -1 : index;
+            return index;
+        }
+
+
+        public V remove(K key)
+        {
+
+            int bucketIndex = getBucketIndex(key);
+            int hashCode = hashCode(key);
+
+            HashNode<K, V> head = bucketArray.get(bucketIndex);
+
+
+            HashNode<K, V> prev = null;
+            while (head != null) {
+
+                if (head.key.equals(key) && hashCode == head.hashCode)
+                    break;
+
+
+                prev = head;
+                head = head.next;
             }
+
+
+            if (head == null)
+                return null;
+
+
+            size--;
+
+
+            if (prev != null)
+                prev.next = head.next;
+            else
+                bucketArray.set(bucketIndex, head.next);
+
+            return head.value;
         }
 
-        table[index].add(new Entry(key, value));
-    }
 
-    public String get(String key) {
-        int index = hash(key);
-        if (table[index] == null) {
+        public V get(K key)
+        {
+
+            int bucketIndex = getBucketIndex(key);
+            int hashCode = hashCode(key);
+
+            HashNode<K, V> head = bucketArray.get(bucketIndex);
+
+
+            while (head != null) {
+                if (head.key.equals(key) && head.hashCode == hashCode)
+                    return head.value;
+                head = head.next;
+            }
+
+
             return null;
         }
 
-        for (Entry entry : table[index]) {
-            if (entry.getKey().equals(key)) {
-                return entry.getValue();
+
+        public void add(K key, V value) {
+
+            int bucketIndex = getBucketIndex(key);
+            int hashCode = hashCode(key);
+            HashNode<K, V> head = bucketArray.get(bucketIndex);
+
+
+            while (head != null) {
+                if (head.key.equals(key) && head.hashCode == hashCode) {
+                    head.value = value;
+                    return;
+                }
+                head = head.next;
             }
-        }
 
-        return null;
-    }
 
-    public boolean has(String key) {
-        int index = hash(key);
-        if (table[index] == null) {
-            return false;
-        }
+            size++;
+            head = bucketArray.get(bucketIndex);
+            HashNode<K, V> newNode
+                    = new HashNode<K, V>(key, value, hashCode);
+            newNode.next = head;
+            bucketArray.set(bucketIndex, newNode);
 
-        for (Entry entry : table[index]) {
-            if (entry.getKey().equals(key)) {
-                return true;
-            }
-        }
 
-        return false;
-    }
+            if ((1.0 * size) / numBuckets >= 0.7) {
+                ArrayList<HashNode<K, V>> temp = bucketArray;
+                bucketArray = new ArrayList<>();
+                numBuckets = 2 * numBuckets;
+                size = 0;
+                for (int i = 0; i < numBuckets; i++)
+                    bucketArray.add(null);
 
-    public Iterable<String> keys() {
-        LinkedList<String> keys = new LinkedList<>();
-        for (LinkedList<Entry> entries : table) {
-            if (entries != null) {
-                for (Entry entry : entries) {
-                    keys.add(entry.getKey());
+                for (HashNode<K, V> headNode : temp) {
+                    while (headNode != null) {
+                        add(headNode.key, headNode.value);
+                        headNode = headNode.next;
+                    }
                 }
             }
-        }
-        return keys;
-    }
-
-    private int hash(String key) {
-        int hash = key.hashCode();
-        return Math.abs(hash) % TABLE_SIZE;
-    }
-
-    private class Entry {
-        private String key;
-        private String value;
-
-        public Entry(String key, String value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        public String getKey() {
-            return key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
-}
+        }}
