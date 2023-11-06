@@ -1,37 +1,37 @@
 package hashtable;
 import java.util.LinkedList;
 
-public class HashTable {
+public class HashTable<K, V> {
     private static final int TABLE_SIZE = 1000;
-    private LinkedList<Entry>[] table;
+    private LinkedList<Entry<K, V>>[] table;
 
     public HashTable() {
         table = new LinkedList[TABLE_SIZE];
     }
 
-    public void set(String key, String value) {
+    public void set(K key, V value) {
         int index = hash(key);
         if (table[index] == null) {
             table[index] = new LinkedList<>();
         }
 
-        for (Entry entry : table[index]) {
+        for (Entry<K, V> entry : table[index]) {
             if (entry.getKey().equals(key)) {
                 entry.setValue(value);
                 return;
             }
         }
 
-        table[index].add(new Entry(key, value));
+        table[index].add(new Entry<>(key, value));
     }
 
-    public String get(String key) {
+    public V get(K key) {
         int index = hash(key);
         if (table[index] == null) {
             return null;
         }
 
-        for (Entry entry : table[index]) {
+        for (Entry<K, V> entry : table[index]) {
             if (entry.getKey().equals(key)) {
                 return entry.getValue();
             }
@@ -40,13 +40,13 @@ public class HashTable {
         return null;
     }
 
-    public boolean has(String key) {
+    public boolean has(K key) {
         int index = hash(key);
         if (table[index] == null) {
             return false;
         }
 
-        for (Entry entry : table[index]) {
+        for (Entry<K, V> entry : table[index]) {
             if (entry.getKey().equals(key)) {
                 return true;
             }
@@ -55,11 +55,11 @@ public class HashTable {
         return false;
     }
 
-    public Iterable<String> keys() {
-        LinkedList<String> keys = new LinkedList<>();
-        for (LinkedList<Entry> entries : table) {
+    public Iterable<K> keys() {
+        LinkedList<K> keys = new LinkedList<>();
+        for (LinkedList<Entry<K, V>> entries : table) {
             if (entries != null) {
-                for (Entry entry : entries) {
+                for (Entry<K, V> entry : entries) {
                     keys.add(entry.getKey());
                 }
             }
@@ -67,29 +67,29 @@ public class HashTable {
         return keys;
     }
 
-    private int hash(String key) {
+    private int hash(K key) {
         int hash = key.hashCode();
         return Math.abs(hash) % TABLE_SIZE;
     }
 
-    private class Entry {
-        private String key;
-        private String value;
+    private static class Entry<K, V> {
+        private K key;
+        private V value;
 
-        public Entry(String key, String value) {
+        public Entry(K key, V value) {
             this.key = key;
             this.value = value;
         }
 
-        public String getKey() {
+        public K getKey() {
             return key;
         }
 
-        public String getValue() {
+        public V getValue() {
             return value;
         }
 
-        public void setValue(String value) {
+        public void setValue(V value) {
             this.value = value;
         }
     }
