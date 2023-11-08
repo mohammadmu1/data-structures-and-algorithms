@@ -10,7 +10,7 @@ output : String
 ![](../repeated-word/Whiteboard%2016.png)
 ### the code
 
-```
+```java
 
 static String repeatedWord(String input){
 

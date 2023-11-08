@@ -44,6 +44,8 @@
 
 * **[CC31 ](./repeated-word/README.md)**
 
+* **[CC32 ](./hashtable/app/src/main/java/hashtable/intersection/README.md)**
+
 ### binary tree
 
 * **[binary tree ](./binary%20tree/README.md)**
