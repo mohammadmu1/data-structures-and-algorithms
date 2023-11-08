@@ -12,7 +12,7 @@ public class App {
 
             map.set("m",56);
 
-            System.out.println("asdfgasfgasdfgasfdg"+map.get("m"));
+            System.out.println(map.has("m"));
 
 
 
