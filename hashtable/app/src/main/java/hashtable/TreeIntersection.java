@@ -1,5 +1,8 @@
 package hashtable;
 
+import hashtable.HashTable;
+import hashtable.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
