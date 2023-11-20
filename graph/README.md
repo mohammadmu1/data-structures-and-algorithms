@@ -2,6 +2,10 @@
 
 The graph is implemented using an adjacency list. Vertices are stored in a HashMap, where the key is the vertex value and the value is the corresponding Vertex object. Edges are represented as a HashSet of Edges in each Vertex object.
 
+## White Board
+
+![WB](./Whiteboard%2018.png)
+
 ## Methods
 
 ### `addVertex(V value)`
