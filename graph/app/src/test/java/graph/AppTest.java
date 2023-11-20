@@ -3,12 +3,63 @@
  */
 package graph;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+
+    Graph<Integer> integerGraph;
+
+    @BeforeEach
+    void createGraph() {
+        integerGraph = new Graph<>();
     }
+
+
+
+
+
+    @Test
+    void assertAddEdges(){
+        Vertex<Integer> vertex1 = new Vertex<>(10);
+        Vertex<Integer> vertex2 = new Vertex<>(20);
+        Vertex<Integer> vertex3 = new Vertex<>(30);
+
+        integerGraph.addVertex(vertex1.getValue());
+        integerGraph.addVertex(vertex2.getValue());
+        integerGraph.addVertex(vertex3.getValue());
+        integerGraph.addEdge(vertex1,vertex2);
+        assertTrue(integerGraph.isConnected(vertex1,vertex2));
+
+        assertFalse(integerGraph.isConnected(vertex1,vertex3));
+    }
+
+
+
+    @Test
+    void assertAllNeighbors (){
+        Vertex<Integer> vertex1 = new Vertex<>(10);
+        Vertex<Integer> vertex2 = new Vertex<>(20);
+        Vertex<Integer> vertex3 = new Vertex<>(30);
+        integerGraph.addVertex(vertex1.getValue());
+        integerGraph.addVertex(vertex2.getValue());
+        integerGraph.addVertex(vertex3.getValue());
+        assertNotEquals(0,integerGraph.getVertices().size());
+
+    }
+
+    @Test
+    void size(){
+        Vertex<Integer> vertex1 = new Vertex<>(10);
+        Vertex<Integer> vertex2 = new Vertex<>(20);
+        Vertex<Integer> vertex3 = new Vertex<>(30);
+        integerGraph.addVertex(vertex1.getValue());
+        integerGraph.addVertex(vertex2.getValue());
+        integerGraph.addVertex(vertex3.getValue());
+        assertEquals(3,integerGraph.size());
+
+    }
+
+
 }
