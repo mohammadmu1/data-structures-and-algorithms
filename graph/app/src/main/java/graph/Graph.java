@@ -1,8 +1,5 @@
 package graph;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class Graph<V> {
 
@@ -75,6 +72,29 @@ public class Graph<V> {
         }
 
         return false;
+    }
+
+    public List<V> breadthFirst(Vertex<V> root) {
+        List<V> out = new ArrayList<>();
+        Set<Vertex<V>> visited = new HashSet<>();
+        Queue<Vertex<V>> queue = new ArrayDeque<>();
+        if (vertex.get(root.getValue()) == null)
+            return out;
+        queue.add(vertex.get(root.getValue()));
+        while (!queue.isEmpty()) {
+            Vertex<V> node = queue.remove();
+            if (visited.contains(node)) {
+                continue;
+            }
+            out.add(node.getValue());
+            visited.add(node);
+            for (Edges<V> e : node.getEdges()) {
+                if (!visited.contains(e.getTo()))
+                    queue.add(vertex.get(e.getTo().getValue()));
+            }
+        }
+
+        return out;
     }
 
 

@@ -5,20 +5,36 @@ package graph;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
 
+    Graph<String> stringGraph;
     Graph<Integer> integerGraph;
 
     @BeforeEach
     void createGraph() {
+        stringGraph = new Graph<>();
         integerGraph = new Graph<>();
     }
 
+    @Test
+    void assertAddVertex(){
+        stringGraph.addVertex("Mohammed");
+        assertTrue(stringGraph.isContainValue("Mohammed"));
+        assertFalse(stringGraph.isContainValue("graph"));
+    }
 
-
-
+    @Test
+    void assertAddVertex2(){
+        integerGraph.addVertex(20);
+        assertTrue(integerGraph.isContainValue(20));
+        assertFalse(integerGraph.isContainValue(30));
+    }
 
     @Test
     void assertAddEdges(){
@@ -60,6 +76,68 @@ class AppTest {
         assertEquals(3,integerGraph.size());
 
     }
+
+
+
+    //  For CC 36
+
+
+
+
+    @Test
+    void testEdgeCase() {
+
+
+        Vertex<String> vertex = new Vertex<>("Pandora");
+        Vertex<String> vertex2 = new Vertex<>("Arendelle");
+        Vertex<String> vertex3 = new Vertex<>("Metroville");
+        Vertex<String> vertex4 = new Vertex<>("Monstroplolis");
+        Vertex<String> vertex5 = new Vertex<>("Narnia");
+        Vertex<String> vertex6 = new Vertex<>("Naboo");
+
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Arendelle");
+        stringGraph.addVertex("Metroville");
+        stringGraph.addVertex("Monstroplolis");
+        stringGraph.addVertex("Narnia");
+        stringGraph.addVertex("Naboo");
+
+
+
+        List<String> expected = List.of("Pandora");
+        assertEquals(expected, stringGraph.breadthFirst(vertex));
+    }
+
+    @Test
+    void testExpectedFailure() {
+
+
+        Vertex<String> vertex = new Vertex<>("Pandora");
+        Vertex<String> vertex2 = new Vertex<>("Pandora");
+        Vertex<String> vertex3 = new Vertex<>("Pandora");
+        Vertex<String> vertex4 = new Vertex<>("Pandora");
+        Vertex<String> vertex5 = new Vertex<>("Pandora");
+        Vertex<String> vertex6 = new Vertex<>("Pandora");
+
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Pandora");
+
+        
+        stringGraph.addEdge(vertex, vertex2);
+        stringGraph.addEdge(vertex2, vertex3);
+        stringGraph.addEdge(vertex4, vertex3);
+        stringGraph.addEdge(vertex4, vertex6);
+        stringGraph.addEdge(vertex3, vertex6);
+        stringGraph.addEdge(vertex3, vertex5);
+
+        List<String> expected = List.of("Pandora");
+        assertEquals(expected, stringGraph.breadthFirst(vertex));
+    }
+
 
 
 }
