@@ -84,29 +84,48 @@ class AppTest {
 
 
 
+
+
     @Test
-    void testEdgeCase() {
+    void testExpected() {
+        Graph<String> stringGraph = new Graph<>();
+        Vertex<String> vertexA = stringGraph.addVertex("A");
+        Vertex<String> vertexB = stringGraph.addVertex("B");
+        Vertex<String> vertexC = stringGraph.addVertex("C");
+        Vertex<String> vertexD = stringGraph.addVertex("D");
+        Vertex<String> vertexE = stringGraph.addVertex("E");
+        Vertex<String> vertexF = stringGraph.addVertex("F");
 
+        stringGraph.addEdge(vertexA, vertexB);
+        stringGraph.addEdge(vertexB, vertexC);
+        stringGraph.addEdge(vertexD, vertexC);
+        stringGraph.addEdge(vertexD, vertexF);
+        stringGraph.addEdge(vertexC, vertexF);
+        stringGraph.addEdge(vertexC, vertexE);
 
-        Vertex<String> vertex = new Vertex<>("Pandora");
-        Vertex<String> vertex2 = new Vertex<>("Arendelle");
-        Vertex<String> vertex3 = new Vertex<>("Metroville");
-        Vertex<String> vertex4 = new Vertex<>("Monstroplolis");
-        Vertex<String> vertex5 = new Vertex<>("Narnia");
-        Vertex<String> vertex6 = new Vertex<>("Naboo");
-
-        stringGraph.addVertex("Pandora");
-        stringGraph.addVertex("Arendelle");
-        stringGraph.addVertex("Metroville");
-        stringGraph.addVertex("Monstroplolis");
-        stringGraph.addVertex("Narnia");
-        stringGraph.addVertex("Naboo");
-
-
-
-        List<String> expected = List.of("Pandora");
-        assertEquals(expected, stringGraph.breadthFirst(vertex));
+        List<String> expected = List.of("A", "B", "C", "D", "F", "E");
+        List<String> bfsResult = stringGraph.breadthFirst(vertexA);
+        assertEquals(expected, bfsResult);
     }
+    @Test
+    void testBreadthFirstWithSingleVertex() {
+        Graph<String> graph = new Graph<>();
+        Vertex<String> singleVertex = graph.addVertex("A");
+
+        List<String> bfsResult = graph.breadthFirst(singleVertex);
+
+        assertEquals(List.of("A"), bfsResult);
+    }
+
+    @Test
+    void testIsContainValue() {
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+
+        assertTrue(graph.isContainValue("A"));
+        assertFalse(graph.isContainValue("B"));
+    }
+
 
     @Test
     void testExpectedFailure() {
