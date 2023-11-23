@@ -50,6 +50,8 @@
 
 * **[CC36 ](./graph/READMEBFS.md)**
 
+* **[CC36 ](./graph/READMETRIP.md)**
+
 ### binary tree
 
 * **[binary tree ](./binary%20tree/README.md)**
