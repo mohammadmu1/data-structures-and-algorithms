@@ -91,6 +91,40 @@ public class Graph<V> {
 
         return out;
     }
+    public static Integer businessTrip(Graph<String> graph, String[] cities) {
+        if (cities == null || cities.length <= 1) {
+            return 0;
+        }
+
+        int totalCost = 0;
+
+        for (int i = 0; i < cities.length - 1; i++) {
+            String currentCity = cities[i];
+            String nextCity = cities[i + 1];
+
+            if (!graph.isContainValue(currentCity) || !graph.isContainValue(nextCity)) {
+                return null;
+            }
+
+            Vertex<String> currentVertex = graph.getVertices().stream()
+                    .filter(v -> v.getValue().equals(currentCity))
+                    .findFirst()
+                    .orElse(null);
+
+            if (currentVertex == null || !graph.isConnected(currentVertex, new Vertex<>(nextCity))) {
+                return null;
+            }
+
+
+            totalCost += graph.getNeighbors(currentVertex).stream()
+                    .filter(e -> e.getTo().getValue().equals(nextCity))
+                    .findFirst()
+                    .orElseThrow(IllegalStateException::new)
+                    .getWeight();
+        }
+
+        return totalCost;
+    }
 }
 
 

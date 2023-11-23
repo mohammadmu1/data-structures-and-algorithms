@@ -157,6 +157,34 @@ class AppTest {
         assertEquals(expected, stringGraph.breadthFirst(vertex));
     }
 
+    //CC37
+    @Test
+    public void testBusinessTrip() {
+        Graph<String> flightGraph = new Graph<>();
+        Vertex<String> cityA = flightGraph.addVertex("A");
+        Vertex<String> cityB = flightGraph.addVertex("B");
+        Vertex<String> cityC = flightGraph.addVertex("C");
 
+        flightGraph.addEdge(cityA, cityB, 100);
+        flightGraph.addEdge(cityB, cityC, 150); 
+
+        // Test a valid trip
+        String[] validTripCities = {"A", "B", "C"};
+        Integer validTripCost = Graph.businessTrip(flightGraph, validTripCities);
+        assertNotNull(validTripCost);
+        assertEquals(250, validTripCost);
+
+
+
+
+        String[] singleCityTrip = {"A"};
+        Integer singleCityCost = Graph.businessTrip(flightGraph, singleCityTrip);
+        assertEquals(0, singleCityCost);
+
+
+        String[] emptyTrip = {};
+        Integer emptyTripCost = Graph.businessTrip(flightGraph, emptyTrip);
+        assertEquals(0, emptyTripCost);
+    }
 
 }
